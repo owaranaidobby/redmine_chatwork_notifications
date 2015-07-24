@@ -8,15 +8,11 @@ Rails.configuration.to_prepare do
     Issue.send(:include, ChatworkNotifications::IssuePatch)
   end
 
-  require_dependency 'journal'
+    require_dependency 'journal'
   unless Journal.included_modules.include? ChatworkNotifications::JournalPatch
     Journal.send(:include, ChatworkNotifications::JournalPatch)
   end 
 
-  require_dependency 'wiki_content'
-  unless WikiContent.included_modules.include? ChatworkNotifications::WikiContentPatch
-    WikiContent.send(:include, ChatworkNotifications::WikiContentPatch)
-  end
 end
 
 Redmine::Plugin.register :redmine_chatwork_notifications do
@@ -28,13 +24,9 @@ Redmine::Plugin.register :redmine_chatwork_notifications do
   author_url 'https://github.com/ummm'
 
   settings partial: 'settings/chatwork_notifications', default: {
-    'room_id' => nil,
     'issue_notify_on_create' => true,
     'issue_notify_on_update' => true,
     'issue_description_max_lines' => 5,
-    'issue_description_max_words' => 100,
-    'wiki_notify_on_create' => true,
-    'wiki_notify_on_update' => true,
+    'issue_description_max_words' => 100
   }
 end
-

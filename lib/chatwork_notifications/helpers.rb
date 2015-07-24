@@ -32,8 +32,8 @@ module ChatworkNotifications
       end
 
       # put message to chatwork
-      def put_chatwork_message message
-        room_id = Setting.plugin_redmine_chatwork_notifications[:room_id]
+      def put_chatwork_message target_user_id, message
+        room_id = Setting.plugin_redmine_chatwork_notifications[target_user_id.to_s]
         client = ChatworkNotifications::Chatwork.new options[:api_token]
         client.put_message room_id, message
 
