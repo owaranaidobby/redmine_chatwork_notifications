@@ -13,10 +13,10 @@ ja:
     issue_description_max_lines: "注記・説明の最大表示行数"
     issue_description_max_words: "注記・説明の最大表示文字数"
     issue_created_notify_title: |-
-      [title]%{user} さんにより、 チケット #%{id}: (%{title}) が作成されたクポ[/title]
+      [title]%{user} さんにより、 チケット #%{id}: (%{title}) が作成された[/title]
       %{url}
     issue_created_notify_description: "%{comment}"
     issue_updated_notify_title: |-
-      [title]%{user} さんにより、 チケット #%{id}: (%{title}) が更新されたクポ[/title]
+      [title]%{user} さんにより、 チケット #%{id}: (%{title}) が更新された[/title]
       %{url}
     issue_updated_notify_description: "%{comment}"
