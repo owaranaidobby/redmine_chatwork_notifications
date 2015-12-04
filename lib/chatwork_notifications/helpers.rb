@@ -16,7 +16,7 @@ module ChatworkNotifications
 
       def truncate_words object, attribute, end_string = "..."
         # textile to html
-        textile = object.send(attribute).dup.gsub(/\r\n?/, "\n")
+        textile = object.send(attribute) ? object.send(attribute).dup.gsub(/\r\n?/, "\n") : ""
         html = Redmine::WikiFormatting.to_html(Setting.text_formatting, textile, object: object, attribute: attribute)
 
         # truncate text.
